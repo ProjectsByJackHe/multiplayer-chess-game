@@ -2,11 +2,9 @@ import React from 'react'
 import JoinGame from './joingame'
 import ChessGame from '../chess/ui/chessgame'
 
-
 /**
  * Onboard is where we create the game room.
  */
-
 
 
 class JoinRoom extends React.Component {
@@ -47,9 +45,9 @@ class JoinRoom extends React.Component {
                            ref = {this.textArea}
                            onInput = {this.typingUserName}></input>
                            
-                    <h1 style={{textAlign: "center", marginTop:"20px"}}>Your Room:<span id="roomnumber"></span></h1>  
+                           
+                    <h1 style={{textAlign: "center", marginTop:"20px"}}>joining room<span id="roomnumber"></span></h1>  
                     
-                    <input type="range" min="1" max="100" class="slider" id="myRange" onChange={(_, value) =>  document.getElementById("roomnumber").innerHTML = document.getElementById("myRange")}/>
                     
                     
                     

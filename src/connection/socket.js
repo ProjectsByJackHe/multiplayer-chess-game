@@ -1,6 +1,6 @@
 import io from 'socket.io-client'
 
-const URL = 'https://ktm1r6-8000.preview.csb.app/' 
+//const URL = 'https://ktm1r6-8000.preview.csb.app/' 
 
 const socket = io(URL)
 

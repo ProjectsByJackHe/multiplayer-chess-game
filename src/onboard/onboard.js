@@ -58,9 +58,10 @@ class CreateNewGame extends React.Component {
 
             :
                <div>
-                    <h1 style={{textAlign: "center", marginTop: String((window.innerHeight / 3)) + "px"}}>Your Username:</h1>
+                   <h1 style={{textAlign: "center", marginTop: "17px"}}>Create A Game</h1>
+                    <h1 style={{textAlign: "center", marginTop: String((window.innerHeight / 3)-150) + "px"}}>Your Username:</h1>
 
-                    <input style={{marginLeft: String((window.innerWidth / 2) - 120) + "px", width: "240px", marginTop: "62px"}} 
+                    <input placeholder='Input Your Name' style={{marginLeft: String((window.innerWidth / 2) - 120) + "px", width: "240px", marginTop: "22px"}} 
                            ref = {this.textArea}
                            onInput = {this.typingUserName}></input>
                            
@@ -69,13 +70,13 @@ class CreateNewGame extends React.Component {
                     <h1 style={{textAlign: "center", marginTop:"20px"}}>Your Room:<span id="roomnumber"></span></h1>  
                     
                     <input type="range" min="1" max="100" class="slider" id="myRange" onChange={(_, value) =>  document.getElementById("roomnumber").innerHTML = " " + document.getElementById("myRange").value}
-                            style={{marginLeft: String((window.innerWidth / 2) - 390/2) + "px", width: "390px", marginTop: "62px"}}/>
-                    
+                            style={{marginLeft: String((window.innerWidth / 2) - 390/2) + "px", width: "390px", marginTop: "42px"}}/>
+
                     
                     
                            
                     <button className="btn btn-primary" 
-                        style = {{marginLeft: String((window.innerWidth / 2) - 60) + "px", width: "120px", marginTop: "62px"}} 
+                        style = {{marginLeft: String((window.innerWidth / 2) - 60) + "px", width: "120px", marginTop: "42px"}} 
                         disabled = {!(this.state.inputText.length > 0)} 
                         onClick = {() => {
                             // When the 'Submit' button gets pressed from the username screen,
@@ -87,7 +88,7 @@ class CreateNewGame extends React.Component {
                                 didGetUserName: true
                             })
                             this.send()
-                        }}>Submit</button>
+                        }}>Create Room</button>
                 </div>
             }
             </React.Fragment>)

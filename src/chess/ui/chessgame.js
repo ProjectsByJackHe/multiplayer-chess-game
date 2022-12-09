@@ -109,8 +109,10 @@ class ChessGame extends React.Component {
 
         if (blackCheckmated) {
             alert("WHITE WON BY CHECKMATE!")
+            window.location.replace("/")
         } else if (whiteCheckmated) {
             alert("BLACK WON BY CHECKMATE!")
+            window.location.replace("/")
         }
     }
 
@@ -263,9 +265,14 @@ const ChessGameWrapper = (props) => {
     
         socket.on("status", statusUpdate => {
             console.log(statusUpdate)
-            alert(statusUpdate)
-            if (statusUpdate === 'This game session does not exist.' || statusUpdate === 'There are already 2 people playing in this room.') {
+            if (statusUpdate === 'There are already 2 people playing in this room.') {
                 doesntExist(true)
+                alert(statusUpdate)
+            }else if(statusUpdate === 'This game session does not exist.'){
+                //create game if not there, idk how to make a game :(
+                alert(statusUpdate + " please create a game to continue. (I would do it for you but i dont know enough about this programing language to do so.)")
+                 window.location.replace("/")
+                
             }
         })
         

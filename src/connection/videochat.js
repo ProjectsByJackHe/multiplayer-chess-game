@@ -112,7 +112,7 @@ function VideoChatApp(props) {
 
   if (callAccepted) {
     mainView = (
-      <Video playsInline ref={partnerVideo} autoPlay style = {{width: "100%", height: "100%"}} />
+      <Video playsInline ref={partnerVideo} autoPlay style = {{width: "100%", height: "720px"}} />
     );
   } else if (receivingCall) {
     mainView = (
@@ -131,7 +131,7 @@ function VideoChatApp(props) {
     mainView = (
       <button onClick = {() => {
         callPeer(props.opponentSocketId)
-      }}><h1>Chat with your friend while you play!</h1></button>
+      }}><h3>Chat with your friend while you play!</h3></button>
     )
   }
 

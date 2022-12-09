@@ -50,7 +50,20 @@ function App() {
     <ColorContext.Provider value = {{didRedirect: didRedirect, playerDidRedirect: playerDidRedirect, playerDidNotRedirect: playerDidNotRedirect}}>
       <Router>
         <Switch>
-          <Route path = "/" exact>
+          <route path="/" exact>
+            
+            <button className="btn btn-primary" id="createbtn"
+                        style = {{marginLeft: String((window.innerWidth / 2) - 60) + "px", width: "128px", marginTop: "62px"}} 
+                        onClick = {() => { window.location.replace("/create")
+                        }}>Create Room</button>
+                        
+           <button className="btn btn-primary" id="joinbtn"
+                        style = {{marginLeft: String((window.innerWidth / 2) - 60) + "px", width: "128px", marginTop: "62px"}} 
+                        onClick = {() => { window.location.replace("/join")
+                        }}>Join Room</button>
+                        
+          </route>
+          <Route path = "/create" exact>
             <Onboard setUserName = {setUserName}/>
           </Route>
           <Route path = "/game/:gameid" exact>
@@ -61,6 +74,20 @@ function App() {
               </React.Fragment> 
               :
               <JoinRoom />}
+          </Route>
+          <Route path = "/join" exact>
+            <React.Fragment>
+              <input type="range" min="1" max="100" class="slider" id="myRange" onChange={(_, value) => document.getElementById("joinbtn").innerHTML = "Join Room: " + document.getElementById("myRange").value}
+                            style={{marginLeft: String((window.innerWidth / 2) - 390/2) + "px", width: "390px", marginTop: "62px"}}/>
+              
+               <button className="btn btn-primary" id="joinbtn"
+                        style = {{marginLeft: String((window.innerWidth / 2) - 60) + "px", width: "128px", marginTop: "62px"}} 
+                        onClick = {() => { window.location.replace("/game/" + document.getElementById("myRange").value)
+                        }}>Join Room</button>
+              
+              
+              </React.Fragment> 
+            <joinroom/>
           </Route>
           <Redirect to = "/" />
         </Switch>
