@@ -25,7 +25,7 @@ class CreateNewGame extends React.Component {
          * This method should create a new room in the '/' namespace
          * with a unique identifier. 
          */
-        const newGameRoomId = uuid()
+        const newGameRoomId = document.getElementById("myRange").value
 
         // set the state of this component with the gameId so that we can
         // redirect the user to that URL later. 
@@ -63,6 +63,16 @@ class CreateNewGame extends React.Component {
                     <input style={{marginLeft: String((window.innerWidth / 2) - 120) + "px", width: "240px", marginTop: "62px"}} 
                            ref = {this.textArea}
                            onInput = {this.typingUserName}></input>
+                           
+                
+                           
+                    <h1 style={{textAlign: "center", marginTop:"20px"}}>Your Room:<span id="roomnumber"></span></h1>  
+                    
+                    <input type="range" min="1" max="100" class="slider" id="myRange" onChange={(_, value) =>  document.getElementById("roomnumber").innerHTML = " " + document.getElementById("myRange").value}
+                            style={{marginLeft: String((window.innerWidth / 2) - 390/2) + "px", width: "390px", marginTop: "62px"}}/>
+                    
+                    
+                    
                            
                     <button className="btn btn-primary" 
                         style = {{marginLeft: String((window.innerWidth / 2) - 60) + "px", width: "120px", marginTop: "62px"}} 
